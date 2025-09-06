@@ -24,3 +24,32 @@ It provides a simple REST API endpoint where you can pass an email's content and
 ---
 
 ## 📂 Project Structure
+src/main/java/com/email/email_writer
+├── EmailGeneratorController.java # REST Controller
+├── EmailGeneratorService.java # Service layer to call Gemini API
+├── EmailRequest.java # Request model (email content + tone)
+
+
+---
+
+## ⚙️ Setup & Configuration
+
+### 1. Clone the Repository
+git clone https://github.com/your-username/email-writer.git
+cd email-writer
+2. Configure API Keys
+Add your Gemini API details in application.properties:
+gemini.api.url=https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent
+gemini.api.key=YOUR_GEMINI_API_KEY
+3. Run the Application
+./mvnw spring-boot:run
+
+Generate Email Reply
+POST /api/email/generate
+{
+  "emailContent": "Hi team, please send me the report by tomorrow.",
+  "tone": "formal"
+}
+"Dear Team, I hope this message finds you well. Could you kindly provide the requested report by tomorrow? Thank you for your support."
+
+
