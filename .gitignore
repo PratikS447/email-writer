@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Node / generated frontend ###
+/node_modules/
+src/main/resources/static/
